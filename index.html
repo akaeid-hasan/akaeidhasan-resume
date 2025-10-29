@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akaeid Hasan — Frontend Developer (WordPress, HTML, CSS, JS)</title>
+
+  <!-- Primary SEO meta -->
+  <meta name="description" content="Akaeid Hasan — Frontend Developer focused on WordPress. I build clean, fast & responsive websites using HTML, CSS, JS, WooCommerce and Shopify.">
+  <meta name="keywords" content="Akaeid Hasan, Frontend Developer, WordPress Developer, WooCommerce, Shopify, HTML, CSS, JavaScript, Elementor, Portfolio">
+  <meta name="author" content="Akaeid Hasan">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical (replace with real URL when live) -->
+  <link rel="canonical" href="https://akaeidhasan.com/">
+
+  <!-- Google Search Console verification placeholder -->
+  <meta name="google-site-verification" content="lS37KdIfCGul-RrIKSdCaPM2MW-LQHGHhILB_vP5qb0" />
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Akaeid Hasan — Frontend Developer (WordPress, HTML, CSS, JS)">
+  <meta property="og:description" content="I build clean, fast & responsive websites. WordPress, WooCommerce, Shopify, HTML/CSS/JS.">
+  <meta property="og:url" content="https://akaeidhasan.com/">
+  <meta property="og:image" content="https://akaeidhasan.com/your-image.jpg"> <!-- replace with full URL -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Akaeid Hasan",
+    "url": "https://akaeidhasan.com",
+    "sameAs": ["#","#","#"], 
+    "jobTitle": "Frontend Developer (WordPress)",
+    "description": "Frontend Developer focused on WordPress. Builds clean, fast and responsive websites using HTML, CSS and JavaScript."
+    "sameAs": [
+    "https://www.facebook.com/akaeidhasanofficial",
+    "https://www.instagram.com/akaeidhasan/",
+    "https://x.com/AkaeidHasanAH"
+    "https://www.behance.net/akaeidhasan"
+    "https://github.com/akaeid-hasan"
+]
+  }
+  </script>
+
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+  :root{
+    --bg:#05060a;
+    --card:#0d1116;
+    --muted:#98a0ab;
+    --accent:#06b6d4;
+    --accent-2:#f59e0b;
+    --glass: rgba(255,255,255,0.025);
+    --maxw:1100px;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg,#02032d 0%, #02032d 100%);
+    color:#e6eef6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.55;
+    padding:28px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .wrap{max-width:var(--maxw);width:100%;}
+
+  /* Header / hero */
+  .hero{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap:24px;
+    align-items:center;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    padding:22px;
+    border-radius:var(--radius);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+
+  /* subtle animated border for hero */
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:calc(var(--radius) + 2px);
+    padding:2px;
+    background: linear-gradient(90deg, rgba(6,182,212,0.06), rgba(245,158,11,0.04));
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events:none;
+  }
+
+  .photo{
+    width:160px;height:160px;border-radius:18px;overflow:hidden;
+    background:transparent;
+    display:grid;place-items:center;border:4px solid rgba(255,255,255,0.03);
+    box-shadow:0 10px 40px rgba(2,6,23,0.6);
+    transform:translateY(-12px);
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .hero-info h1{font-size:1.6rem;margin:0 0 8px;color:var(--accent);}
+  .hero-info p{margin:0;color:var(--muted);font-size:0.96rem}
+  .hero-meta{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+  .meta-pill{background:var(--glass);padding:8px 12px;border-radius:12px;color:var(--muted);font-size:0.86rem;display:inline-flex;gap:8px;align-items:center}
+
+  /* interests marquee section - placed in header area under about text */
+  .interests-wrap{margin-top:12px}
+
+  /* layout grid */
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 360px;
+    gap:22px;
+    margin-top:22px;
+  }
+/* About Section */
+.about {
+  position: relative;
+  padding: 24px;
+  border-radius: 14px;
+  background: #000000;
+  color: #ddd;
+  overflow: hidden;
+}
+
+
+/* Snake border effect */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff, #92fe9d);
+  background-size: 300% 300%;
+  animation: snake 6s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
+}
+
+/* Animation for snake border */
+@keyframes snake {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.about h3 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.about-content p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #00c9ff;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about { padding: 18px; }
+  .about h3 { font-size: 1.3rem; }
+}
+
+  /* left column = main stacked cards */
+  .col-left{display:grid;gap:18px}
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+    padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 24px rgba(3,7,18,0.5);
+    position:relative; overflow:hidden;
+  }
+
+  /* animated card outline on hover */
+  .card::after{
+    content:"";
+    position:absolute;inset:0;border-radius:14px;padding:2px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity:0;transition:opacity .35s, transform .45s;
+    pointer-events:none;
+  }
+  .card:hover::after{opacity:1;transform:translateY(-3px)}
+
+  .card h3{margin:0 0 8px;font-size:1.05rem}
+  .muted{color:var(--muted);font-size:0.92rem}
+  .small{font-size:0.86rem;color:var(--muted)}
+
+
+  /* tools / skills boxes */
+  .tools{display:flex;flex-wrap:wrap;gap:10px}
+  .tool-pill{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;font-weight:600;color:#f8fafc;font-size:0.92rem;display:inline-flex;gap:8px;align-items:center}
+
+  /* progress bars */
+  .skill{margin-bottom:12px}
+  .skill .label{display:flex;justify-content:space-between;margin-bottom:6px;font-weight:600}
+  .progress{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+  .progress > span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.4s cubic-bezier(.2,.9,.2,1)}
+
+  /* right column */
+  .col-right{display:grid;gap:18px}
+  .flag-row{display:flex;gap:10px;align-items:center}
+
+  /* portfolio links */
+  .portfolio-links{display:flex;flex-wrap:wrap;gap:10px}
+  .portfolio-links a{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none}
+  .portfolio-links a:hover {
+  background-color: #ff014f; /* hover color */
+}
+  .portfolio-links a {
+
+  transition: background-color 1s ease; /* hover effect smoothly 3s e hobe */
+}
+
+
+  /* contact row */
+  .contact-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .contact-row a{color:var(--muted);text-decoration:none}
+
+  /* social icons (hero) */
+  .social{display:flex;gap:12px;align-items:center;margin-top:10px}
+  .social a{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none;font-size:18px;transition:transform .25s, background .25s}
+  .social a:hover{transform:translateY(-6px) rotate(-8deg);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#061219;box-shadow:0 8px 30px rgba(6,182,212,0.08)}
+
+  /* marquee wrappers - copying & adapting your code */
+  .marquee-container-1, .marquee-container-2 {
+    width:100%;
+    overflow:hidden;
+    padding:14px 12px;
+    border-radius:12px;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    margin:8px 0;
+  }
+  .marquee-track-1, .marquee-track-2 {display:flex;width:max-content;align-items:center;gap:18px}
+  .marquee-item-1, .marquee-item-2 {display:inline-flex;align-items:center;padding:0 18px;flex-shrink:0;white-space:nowrap;font-weight:600}
+  .marquee-item-1 i, .marquee-item-2 i {margin-right:8px;font-size:18px}
+  .marquee-track-1{animation:scroll-ltr 40s linear infinite}
+  .marquee-track-2{animation:scroll-rtl 30s linear infinite}
+  .marquee-item-1{color:#49FC00}
+  .marquee-item-2{color:#FF7AB6}
+
+  @keyframes scroll-ltr {from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes scroll-rtl {from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .marquee-container-1:hover .marquee-track-1,
+  .marquee-container-2:hover .marquee-track-2 {animation-play-state:paused}
+
+  /* footer */
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem;padding:12px}
+
+  /* responsiveness */
+  @media (max-width:1100px){
+    .grid{grid-template-columns:1fr 320px}
+  }
+  @media (max-width:900px){
+    .hero{grid-template-columns:120px 1fr}
+    .photo{width:120px;height:120px}
+  }
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr;gap:18px}
+    .hero{grid-template-columns:1fr;text-align:left}
+    .photo{transform:none;margin-bottom:10px}
+    .hero-info{align-self:start}
+    .hero{padding:16px}
+    .hero-info h1{font-size:1.4rem}
+  }
+  @media (max-width:420px){
+    body{padding:14px}
+    .hero{padding:12px}
+    .photo{width:96px;height:96px;border-radius:12px}
+  }
+
+  .email {
+    color: #c7c7c7;
+  }
+
+  /* CTA Section */
+.cta {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.cta-box {
+  display: block;
+  text-decoration: none;
+  background: #0f0f2d;
+  border-radius: 16px;
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Gradient Border Animation */
+.cta-box::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff, #92fe9d);
+  background-size: 300% 300%;
+  animation: borderflow 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes borderflow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.cta-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.cta-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #00c9ff;
+}
+
+.cta-content p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+
+    <!-- HERO -->
+    <header class="hero" aria-label="Hero">
+      <div class="photo" aria-hidden="true">
+        <!-- placeholder image: replace src with your image URL -->
+        <img src="./images/akaeid-hasan-frontend-developer-wordpress-specialist-Profile-Pic.png" alt="Akaeid Hasan — profile photo">
+      </div>
+
+      <div class="hero-info">
+        <h1>Akaeid Hasan</h1>
+        <p class="muted">I'm Akaeid Hasan, a Frontend Developer focused on WordPress. I build clean, fast, and responsive websites that help businesses grow. I also have working knowledge of HTML, CSS, and JavaScript for better flexibility and performance.</p>
+
+        <div class="hero-meta" aria-hidden="true">
+          <div class="meta-pill"><i class="fa-solid fa-laptop-code"></i> Frontend & WordPress</div>
+          <div class="meta-pill"><i class="fa-solid fa-clock"></i> 1+ years experience</div>
+          <div class="meta-pill"><i class="fa-solid fa-location-dot"></i> Bangladesh</div>
+        </div>
+
+        
+
+        <!-- social icons -->
+        <div class="social" aria-label="Social links">
+            <a href="https://akaeidhasan.com" aria-label="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://www.facebook.com/akaeidhasanofficial" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/akaeidhasanAH" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/akaeidhasan" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AkaeidHasanAH" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/akaeid-hasan" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.threads.com/@akaeidhasan" aria-label="Threads"><i class="fab fa-threads"></i></a>
+            <a href="https://www.behance.net/akaeidhasan" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a href="https://akaeidhasan.blogspot.com" aria-label="Blogger"><i class="fab fa-blogger"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Interests marquee (first set) -->
+        <div class="interests-wrap" style="margin-top:12px">
+          <div class="marquee-container-1" aria-hidden="true">
+            <div class="marquee-track-1" aria-hidden="true">
+              <!-- services (you provided this list) -->
+              <div class="marquee-item-1"><i class="fab fa-wordpress"></i> WordPress Website Development</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-rocket"></i> WordPress Website Design</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-palette"></i> Figma to WordPress</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-image"></i> PSD to WordPress</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-puzzle-piece"></i> Elementor Design</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-shield-halved"></i> Maintenance & Security</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-shopping-cart"></i> E-commerce / WooCommerce</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-tachometer-alt"></i> Speed Optimization</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-arrows-rotate"></i> Website Migration</div>
+              <!-- repeated block for seamless effect -->
+              <div class="marquee-item-1"><i class="fab fa-wordpress"></i> WordPress Website Development</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-rocket"></i> WordPress Website Design</div>
+              <div class="marquee-item-1"><i class="fa-solid fa-palette"></i> Figma to WordPress</div>
+            </div>
+          </div>
+
+          <!-- marquee 2 -->
+          <div class="marquee-container-2" aria-hidden="true">
+            <div class="marquee-track-2" aria-hidden="true">
+              <div class="marquee-item-2"><i class="fa-solid fa-bullseye"></i> Landing Page Design</div>
+              <div class="marquee-item-2"><i class="fa-solid fa-store"></i> E-commerce Stores</div>
+              <div class="marquee-item-2"><i class="fa-solid fa-user"></i> Portfolio Websites</div>
+              <div class="marquee-item-2"><i class="fa-solid fa-briefcase"></i> Business / Corporate</div>
+              <div class="marquee-item-2"><i class="fa-solid fa-plane"></i> Travel / Tour Sites</div>
+              <div class="marquee-item-2"><i class="fa-solid fa-gamepad"></i> Gaming Websites</div>
+              <!-- repeat -->
+              <div class="marquee-item-2"><i class="fa-solid fa-bullseye"></i> Landing Page Design</div>
+              <div class="marquee-item-2"><i class="fa-solid fa-store"></i> E-commerce Stores</div>
+            </div>
+          </div>
+        </div>
+
+    <!-- MAIN GRID -->
+    <div class="grid" role="region" aria-label="Content grid">
+
+      <!-- LEFT -->
+      <div class="col-left">
+
+        <!-- Experience -->
+        <section class="card about" aria-labelledby="about-heading">
+  <h3 id="about-heading">About Me</h3>
+  <div class="about-content">
+    <p>
+      Hi, I’m <strong>Akaeid Hasan 👋 —</strong>
+      <span class="highlight">a Frontend Developer specializing in WordPress website development.</span> with 
+      individuals and businesses build clean, fast, and responsive websites that not only look great but also perform smoothly across all devices.
+
+    </p>
+
+    <p>
+     I focus on creating user-friendly and professional websites using WordPress. I also have working knowledge of Shopify, HTML, CSS, JavaScript, and basic React, which helps me bring more flexibility and control into my work.
+
+    </p>
+
+    <p>
+     I believe in clean design, solid performance, and delivering websites that align with business goals and leave a lasting impact.
+
+    </p>
+  </div>
+</section>
+
+
+        <!-- Tools / Skills -->
+        <section class="card" aria-labelledby="skills-heading">
+          <h3 id="skills-heading">Skills & Tools</h3>
+
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <!-- tool pills -->
+            <div class="tool-pill">WordPress</div>
+            <div class="tool-pill">WooCommerce</div>
+            <div class="tool-pill">Shopify</div>
+            <div class="tool-pill">HTML</div>
+            <div class="tool-pill">CSS</div>
+            <div class="tool-pill">JavaScript</div>
+            <div class="tool-pill">Elementor</div>
+            <div class="tool-pill">Git / GitHub</div>
+            <div class="tool-pill">VS Code</div>
+            <div class="tool-pill">Figma</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="skill"><div class="label"><span>WordPress</span><span class="small">95%</span></div><div class="progress"><span data-value="95%"></span></div></div>
+            <div class="skill"><div class="label"><span>WooCommerce</span><span class="small">85%</span></div><div class="progress"><span data-value="85%"></span></div></div>
+            <div class="skill"><div class="label"><span>Shopify</span><span class="small">60%</span></div><div class="progress"><span data-value="60%"></span></div></div>
+            <div class="skill"><div class="label"><span>HTML / CSS / JS</span><span class="small">50%</span></div><div class="progress"><span data-value="50%"></span></div></div>
+          </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="card" aria-labelledby="portfolio-heading">
+          <h3 id="portfolio-heading">Portfolio</h3>
+          <p class="muted small" style="margin-top:8px">Sample links — replace with your live projects later.</p>
+          <div class="portfolio-links" style="margin-top:12px">
+            <a href="https://www.behance.net/gallery/234489299/Modern-gym-website-design-by-Akaeid-Hasan" aria-label="Behance"><i class="fa-brands fa-behance"></i> Gym Website</a>
+            <a href="https://www.behance.net/gallery/235462287/Clothing-Fashion-E-commerce-Website-Design" aria-label="Behance"><i class="fa-brands fa-behance"></i> Fashion Brand Website</a>
+            <a href="https://www.behance.net/gallery/235813083/Modern-restaurant-e-commerce-website-design" aria-label="Behance"><i class="fa-brands fa-behance"></i> Modern-Restaurant Website</a>
+            <a href="https://www.behance.net/gallery/231424387/Fresh-Produce-E-commerce-Platform" aria-label="Behance"><i class="fa-brands fa-behance"></i> Fresh-Produce-E-commerce Webbsite</a>
+            <a href="https://www.behance.net/gallery/231834919/Modern-Pizza-and-Fast-Food-Restaurant-Website-Design" aria-label="Behance"><i class="fa-brands fa-behance"></i> Modern-Restaurant Website</a>
+            <a href="https://www.behance.net/gallery/231208799/Bicycle-E-commerce-Website" aria-label="Behance"><i class="fa-brands fa-behance"></i> Bicycle-E-commerce-Website</a>
+          </div>
+        </section>
+
+       
+
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="col-right" aria-label="Side content">
+
+        <!-- Education -->
+        <section class="card" aria-labelledby="edu-heading">
+          <h3 id="edu-heading">Education</h3>
+          <div style="margin-top:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><strong>Class 10</strong><div class="small muted">Secondary School Certificate</div></div>
+              <div class="date-pill">Year</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="card" aria-labelledby="lang-heading">
+          <h3 id="lang-heading">Languages</h3>
+          <div class="flag-row" style="margin-top:10px">
+            <img src="https://flagcdn.com/w20/bd.png" alt="Bangladesh" width="28" height="20" style="border-radius:4px">
+            <img src="https://flagcdn.com/w20/gb.png" alt="UK" width="28" height="20" style="border-radius:4px">
+            <img src="https://flagcdn.com/w20/us.png" alt="US" width="28" height="20" style="border-radius:4px">
+          </div>
+        </section>
+
+        <!-- Design / Editing Tools (developer version) -->
+        <section class="card" aria-labelledby="devtools-heading">
+          <h3 id="devtools-heading">Dev Tools</h3>
+          <div style="margin-top:12px" class="tools">
+            <div class="tool-pill"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="tool-pill"><i class="fa-brands fa-wordpress"></i> Woocommarce</div>
+            <div class="tool-pill"><i class="fa-brands fa-shopify"></i> Shopify</div>
+            <div class="tool-pill"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="tool-pill"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+            <div class="tool-pill"><i class="fa-brands fa-html5"></i> HTML</div>
+            <div class="tool-pill"><i class="fa-brands fa-github"></i> GitHub</div>
+            <div class="tool-pill"><i class="fa-solid fa-code"></i> VS Code</div>
+            <div class="tool-pill"><i class="fa-brands fa-figma"></i> Figma</div>
+          </div>
+        </section>
+
+        <!-- Details -->
+        <section class="card" aria-labelledby="details-heading">
+          <h3 id="details-heading">Contact</h3>
+          <div style="margin-top:10px" class="small muted">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><i class="fa-regular fa-calendar"></i> 20 years</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><i class="fa-regular fa-envelope"></i> <a class="email" href="mailto:akaeidhasan.bd@gmail.com">akaeidhasan.bd@gmail.com</a></div>
+            <div style="display:flex;gap:8px;align-items:center"><i class="fa-solid fa-phone"></i> +8801580726459</div>
+          </div>
+
+            <div class="social" aria-label="Social links">
+            <a href="https://akaeidhasan.com" aria-label="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://www.facebook.com/akaeidhasanofficial" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/akaeidhasan" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/AkaeidHasanAH" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/akaeid-hasan" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.threads.com/@akaeidhasan" aria-label="Threads"><i class="fab fa-threads"></i></a>
+            <a href="https://www.behance.net/akaeidhasan" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a href="https://akaeidhasan.blogspot.com" aria-label="Blogger"><i class="fab fa-blogger"></i></a>
+        </div>
+
+        </section>
+
+      </aside>
+    </div>
+
+     <!-- Contact -->
+       <section class="cta">
+  <a href="https://wa.me/8801580726459" target="_blank" class="cta-box">
+    <div class="cta-content">
+      <h3>🚀 Hire Me</h3>
+      <p>Available on WhatsApp for Freelance Projects</p>
+    </div>
+  </a>
+</section>
+
+
+    <footer>
+      © <span id="year"></span> Akaeid Hasan — Built with ❤️ • <span class="small muted">akaeidhasan.com</span>
+    </footer>
+  </div>
+
+  <!-- Scripts: progress animation + accessibility helpers -->
+  <script>
+  // set year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // animate progress bars when visible
+  function animateSkills() {
+    const skills = document.querySelectorAll('.progress span');
+    skills.forEach(s=>{
+      const val = s.getAttribute('data-value') || '0%';
+      s.style.width = '0%';
+      // slight stagger
+      setTimeout(()=> s.style.width = val, 300);
+    });
+  }
+
+  // reveal on scroll using IntersectionObserver
+  const skillSection = document.querySelector('.card[aria-labelledby="skills-heading"]');
+  if('IntersectionObserver' in window && skillSection){
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ animateSkills(); io.unobserve(e.target); }
+      });
+    }, {threshold:0.25});
+    io.observe(skillSection);
+  } else {
+    animateSkills();
+  }
+
+  // keyboard skip to main (a11y improvement) - optional
+  (function(){ 
+    const skip = document.createElement('a');
+    skip.href="#main";
+    skip.textContent="Skip to content";
+    skip.style.cssText="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden";
+    document.body.insertBefore(skip, document.body.firstChild);
+  })();
+
+  </script>
+</body>
+</html>
