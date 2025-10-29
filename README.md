@@ -9,7 +9,7 @@ This resume is designed like a modern portfolio — fast, responsive, and easy t
 ---
 
 ## 🌐 Live Preview
-👉 [View My Resume on GitHub Pages](https://akaeidhasan.github.io/akaeid-hasan-resume/)
+👉 [View My Resume on GitHub Pages](https://akaeid-hasan.github.io/akaeidhasan-resume/)
 
 ---
 
